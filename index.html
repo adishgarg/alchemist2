@@ -191,10 +191,6 @@ https://templatemo.com/tm-557-grad-school
                   <p class="description">Regular Students</p>
                 </div>
               </div>
-              <div class="hover-text">
-                <p class="text">1 IIM Call per 3 students
-                </p>
-              </div>
             </section>
           </span>
             <div class="col-md-12">
@@ -283,8 +279,17 @@ https://templatemo.com/tm-557-grad-school
                     </section>
                 </div>
             </div>
+            
         </div>
     </div>
+    <div class="hover-text" style="text-align: center; width: 100%; margin-top: 25px; margin-bottom: -100px;">
+      <div class="slideshow">
+        <h3 class="slide">1 IIM Call per 3 students</h3>
+        <h3 class="slide">India's Most Successful CAT Prep Institute</h3>
+      </div>
+    </div>
+    
+    
 </section>
 
   <section class="section coming-soon" data-section="section3">
@@ -564,6 +569,23 @@ https://templatemo.com/tm-557-grad-school
         $(window).scroll(function () {
           checkSection();
         });
+        document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slideshow .slide");
+  let currentIndex = 0;
+
+  function showNextSlide() {
+    slides[currentIndex].classList.remove("active");
+
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[currentIndex].classList.add("active");
+  }
+
+  slides[currentIndex].classList.add("active");
+
+  setInterval(showNextSlide, 3000);
+});
+
     </script>
 </body>
 </html>
